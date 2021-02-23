@@ -48,7 +48,7 @@
 import 'package:flutter/material.dart';
 
 class ColorBrightness {
-  late Color _color;
+   Color _color;
 
   ColorBrightness(Color color) {
     this._color =
