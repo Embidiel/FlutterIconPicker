@@ -11,11 +11,11 @@ import 'icons.dart';
 
 class SearchBar extends StatefulWidget {
   const SearchBar({
-     this.iconPack,
-     this.searchHintText,
-     this.searchIcon,
-     this.searchClearIcon,
-     this.backgroundColor,
+    this.iconPack,
+    this.searchHintText,
+    this.searchIcon,
+    this.searchClearIcon,
+    this.backgroundColor,
     this.customIconPack,
     Key key,
   }) : super(key: key);
@@ -73,6 +73,11 @@ class _SearchBarState extends State<SearchBar> {
             : Colors.white,
       ),
       decoration: InputDecoration(
+        border: new OutlineInputBorder(
+          borderRadius: const BorderRadius.all(
+            Radius.circular(50.0),
+          ),
+        ),
         contentPadding: const EdgeInsets.only(top: 15),
         hintStyle: TextStyle(
           color: ColorBrightness(widget.backgroundColor).isLight()

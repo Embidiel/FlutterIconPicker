@@ -75,7 +75,7 @@ class FlutterIconPicker {
     /// ```dart
     ///   const Text('Pick an icon')
     /// ```
-    Widget title = const Text('Pick an icon'),
+    Widget title = const Text(''),
 
     /// The child for the Widget `FlatButton`, which closes the dialog.
     /// Sits underneeth everything.

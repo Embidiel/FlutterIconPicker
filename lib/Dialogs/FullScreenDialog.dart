@@ -99,6 +99,16 @@ class FullScreenDialogState extends State<FullScreenDialog> {
                   searchHintText: widget.searchHintText,
                   backgroundColor: widget.backgroundColor,
                 ),
+              SizedBox(height: 15),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    "Colors",
+                  ),
+                ),
+              ),
+              SizedBox(height: 15),
               ColorPicker(
                   color: widget.iconColor,
                   pickersEnabled: const <ColorPickerType, bool>{
@@ -109,7 +119,7 @@ class FullScreenDialogState extends State<FullScreenDialog> {
                     ColorPickerType.custom: false,
                     ColorPickerType.wheel: false,
                   },
-                  borderRadius: 10,
+                  borderRadius: 30,
                   spacing: 10,
                   runSpacing: 10,
                   width: 30,
@@ -117,6 +127,16 @@ class FullScreenDialogState extends State<FullScreenDialog> {
                   onColorChanged: (Color color) =>
                       setState(() => widget.iconColor = color),
                   heading: null),
+              SizedBox(height: 5),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  child: Text(
+                    "Icons",
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
               Expanded(
                 child: IconPicker(
                   showTooltips: widget.showTooltips,
