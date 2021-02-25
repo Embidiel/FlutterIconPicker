@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flex_color_picker/flex_color_picker.dart';
+
 import 'FullScreenDialog.dart';
 import 'AdaptiveDialog.dart';
 import '../Helpers/ColorBrightness.dart';
@@ -6,8 +8,9 @@ import '../IconPicker/iconPicker.dart';
 import '../IconPicker/searchBar.dart';
 import '../Models/IconPack.dart';
 
+// ignore: must_be_immutable
 class DefaultDialog extends StatelessWidget {
-  const DefaultDialog({
+  DefaultDialog({
     Key key,
     this.showSearchBar,
     this.routedView = false,
@@ -37,7 +40,7 @@ class DefaultDialog extends StatelessWidget {
   final bool showTooltips;
   final bool barrierDismissible;
   final double iconSize;
-  final Color iconColor;
+  Color iconColor;
   final double mainAxisSpacing;
   final double crossAxisSpacing;
   final ShapeBorder iconPickerShape;
@@ -125,7 +128,6 @@ class DefaultDialog extends StatelessWidget {
                     searchHintText: searchHintText,
                     backgroundColor: backgroundColor,
                   ),
-                Text('TANGINA'),
                 Expanded(
                   child: IconPicker(
                     showTooltips: showTooltips,
@@ -170,6 +172,22 @@ class DefaultDialog extends StatelessWidget {
                   searchHintText: searchHintText,
                   backgroundColor: backgroundColor,
                 ),
+              Text('TANGINAs'),
+              ColorPicker(
+                  color: iconColor,
+                  pickersEnabled: const <ColorPickerType, bool>{
+                    ColorPickerType.both: false,
+                    ColorPickerType.primary: true,
+                    ColorPickerType.accent: false,
+                    ColorPickerType.bw: false,
+                    ColorPickerType.custom: false,
+                    ColorPickerType.wheel: false,
+                  },
+                  onColorChanged: (Color color) => () => iconColor = color,
+                  heading: Text(
+                    'Select color',
+                    style: Theme.of(context).textTheme.headline5,
+                  )),
               Expanded(
                 child: IconPicker(
                   showTooltips: showTooltips,
