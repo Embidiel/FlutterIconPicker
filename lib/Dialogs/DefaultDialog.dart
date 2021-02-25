@@ -14,7 +14,7 @@ class DefaultDialog extends StatelessWidget {
     Key key,
     this.showSearchBar,
     this.routedView = false,
-    this.adaptive = false,
+    this.adaptive = true,
     this.showTooltips,
     this.barrierDismissible,
     this.iconSize,
