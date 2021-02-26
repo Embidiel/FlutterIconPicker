@@ -25,10 +25,10 @@ class IconPicker extends StatefulWidget {
 
   const IconPicker({
     Key key,
-     this.iconPack,
-     this.iconSize,
-     this.noResultsText,
-     this.backgroundColor,
+    this.iconPack,
+    this.iconSize,
+    this.noResultsText,
+    this.backgroundColor,
     this.mainAxisSpacing,
     this.crossAxisSpacing,
     this.iconColor,
@@ -106,7 +106,8 @@ class _IconPickerState extends State<IconPicker> {
                     var item = IconPicker.iconMap.entries.elementAt(index);
 
                     return GestureDetector(
-                      onTap: () => Navigator.pop(context, item.value),
+                      onTap: () => Navigator.pop(context,
+                          {'icon': item.value, 'iconColor': widget.iconColor}),
                       child: widget.showTooltips
                           ? Tooltip(
                               message: item.key,

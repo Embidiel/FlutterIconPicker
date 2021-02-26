@@ -14,7 +14,7 @@ import 'IconPicker/searchBar.dart';
 import 'Models/IconPack.dart';
 
 class FlutterIconPicker {
-  static Future<IconData> showIconPicker(
+  static Future<Map<String, Object>> showIconPicker(
     BuildContext context, {
 
     /// Defines if the searchbar will be
@@ -124,7 +124,7 @@ class FlutterIconPicker {
 
     /// Provide here your custom IconPack in a [Map<String, IconData>]
     /// to show your own collection of Icons to pick from
-    Map<String, IconData> customIconPack,
+    Map<String, Object> customIconPack,
   }) async {
     if (iconPackMode == IconPack.custom && customIconPack == null)
       throw AssertionError(
@@ -145,7 +145,7 @@ class FlutterIconPicker {
     if (backgroundColor == null)
       backgroundColor = Theme.of(context).dialogBackgroundColor;
 
-    IconData iconPicked;
+    Map<String, Object> iconPicked;
 
     if (adaptiveDialog) {
       if (MediaQuery.of(context).size.width >= constraints.maxWidth) {
